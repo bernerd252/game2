@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Trigger Clicked</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<!-- Added link to the jQuery Library -->
+		<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+
+		
+
+		  
+
+		
+
+	</head>
+	<body>
+		
+				<div class = "stamina">
+					<p>100</p>
+				</div>
+				<div class = "OpponentsStamina ">
+					<p>100</p>
+				</div>
+				<div class = "UserAvatar">
+					<img src="images/wolverineStanding.gif">
+				</div>
+			</div>
+			
+				<div class = "ComputerAvatar">
+				</div>
+			
+
+		<script type="text/javascript">
+
+		// DECDLARE VARIABLES
+
+		var hulkStrength = ["1","2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"];
+		var hulkSpeed = ["1","2", "3", "4", "5", "6", "7", "8", "9", "10"];
+		var hulkStamina = ["1","2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"];
+		var hulkDefense = ["1","2", "3", "4", "5"];
+		var hulkIntelligence = ["1","2", "3", "4", "5", "6", "7", "8", "9", "10"];
+		var hulk = [hulkStrength, hulkSpeed, hulkStamina, hulkDefense, hulkIntelligence];
+		var spidermanStrength = ["1","2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"];
+		var spidermanSpeed = ["1","2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18"];
+		var spidermanStamina = ["1","2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14"];
+		var spidermanDefense = ["1","2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"];
+		var spidermanIntelligence = ["1","2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18"];
+		var spiderman = [spidermanStrength, spidermanSpeed, spidermanStamina, spidermanDefense, spidermanIntelligence];
+		var ironmanStrength = ["1","2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18"];
+		var ironmanSpeed = ["1","2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"];
+		var ironmanStamina = ["1","2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17"];
+		var ironmanDefence = ["1","2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"];
+		var ironmanIntelligence = ["1","2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"];
+		var ironman = [ironmanStrength, ironmanSpeed, ironmanStamina, ironmanDefence, ironmanIntelligence];
+		var wolverineStrength = ["1","2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16"];
+		var wolverineSpeed = ["1","2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17"];
+		var wolverineStamina = ["1","2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"];
+		var wolverineDefence = ["1","2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"];
+		var wolverineIntelligence = ["1","2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"];
+		var wolverine = [wolverineStrength, wolverineSpeed, wolverineStamina, wolverineDefence, wolverineIntelligence];
+		var blackpantherStrength = ["1","2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17"];
+		var blackpantherSpeed = ["1","2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17"];
+		var blackpantherStamina = ["1","2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18"];
+		var blackpantherDefence = ["1","2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14"];
+		var blackpantherIntelligence = ["1","2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19"]
+		var blackpanther = [blackpantherStrength,blackpantherSpeed, blackpantherStamina, blackpantherDefence, blackpantherIntelligence];
+		var heroes = [hulk, spiderman, ironman, wolverine];
+		 // console.log(heroes)
+		var userChoice = blackpanther
+		 // console.log(userChoice)
+
+		 // CHOOSE OPPONENT
+
+		{	var computerChoice = heroes[Math.floor(Math.random() * heroes.length)];
+		 	// console.log(computerChoice)
+			
+			var userStrength = userChoice[0];
+			var userSpeed = userChoice[1];
+			var userStamina = userChoice[2];
+			var userDefence = userChoice[3];
+			var userIntelligence = userChoice[4];
+			var userLife = 100;
+			var computerStrength = computerChoice[0];
+			var computerSpeed = computerChoice[1];
+			var computerStamina = computerChoice[2];
+			var computerDefence = computerChoice[3];
+			var computerIntelligence = computerChoice[4];
+			var computerLife = 100;
+
+			var opponent = (computerStrength + computerStamina + computerSpeed + computerDefence + computerIntelligence);
+			console.log("var opponent" + opponent)
+
+			var character = opponent[43];
+			console.log(character)
+			var character2 = opponent[42];
+			console.log(character2)
+
+			if (character == 5)
+			{	var html = "<img src='images/spidermanStanding.gif'>"
+				document.querySelector('.ComputerAvatar').innerHTML = html;}
+
+			if (character == 8)
+			{	var html = "<img src='images/ironmanStandingRight.gif'>"
+				document.querySelector('.ComputerAvatar').innerHTML = html;}
+
+			if (character2 == 3)
+			{	var html = "<img src='images/wolverineStandingRight.gif'>"
+				document.querySelector('.ComputerAvatar').innerHTML = html;}
+
+			if (character == 2)
+			{	var html = "<img src='images/blackpantherStanding.gif'>"
+				document.querySelector('.ComputerAvatar').innerHTML = html;}
+
+
+			// USER DECIDES ON MOVE COMPUTER LOGS CHOICE, , FIGHTING BEGINS,CHAOS ENSUES.
+
+			document.onkeyup = function(event)
+			{	var userMove = String.fromCharCode(event.keyCode).toLowerCase();
+				{	if ((userMove == 'i') || (userMove == 'o') || (userMove == 'p'))
+					// {	console.log(userMove)
+						if (userMove == "i")	
+						{	var userBigHitStrength = userStrength[Math.floor(Math.random() * userStrength.length)];
+							var userBigHitSpeed = userStrength[Math.floor(Math.random() * userStrength.length)];
+							var userBigHitIntelligence = userIntelligence[Math.floor(Math.random() * userIntelligence.length)];
+							var userBigHit = (userBigHitStrength * userBigHitSpeed * (userBigHitIntelligence/2));
+							// console.log(userBigHit) 
+
+							var computerDefenceDefence = computerDefence[Math.floor(Math.random() * computerDefence.length)];
+							var computerDefenceSpeed = computerSpeed[Math.floor(Math.random() * computerSpeed.length)];
+							var computerBlock = (computerDefenceDefence * computerDefenceSpeed);
+							// console.log(computerBlock)	
+							var moveOutcome = (userBigHit - computerBlock);
+							// console.log("moveOutcome "  + moveOutcome)
+							{	if (moveOutcome > 400)
+								{	computerLife = (computerLife - 20);
+									console.log("computerLife " + computerLife)
+									console.log("userLife " + userLife)
+								}
+
+								if((moveOutcome < 401) && (moveOutcome > 300))
+								{	computerLife = (computerLife - 15); userLife = (userLife - 3);
+									console.log("computerLife " + computerLife)
+									console.log("userLife " + userLife)
+								}
+
+								if((moveOutcome < 301) && (moveOutcome > 200))
+								{	computerLife = (computerLife - 10); userLife = (userLife - 3);
+									console.log("computerLife " + computerLife)
+									console.log("userLife " + userLife)
+								}
+
+								if((moveOutcome < 201) && (moveOutcome > 100))
+								{	computerLife = (computerLife - 5); userLife = (userLife - 3);
+									console.log("computerLife " + computerLife)
+									console.log("userLife " + userLife)
+								}
+
+								if((moveOutcome < 101) && (moveOutcome > 0))
+								{	computerLife = (computerLife - 3); userLife = (userLife - 3);
+									console.log("computerLife " + computerLife)
+									console.log("userLife " + userLife)
+								}
+
+								if(moveOutcome < 1) 
+								{	userLife = (userLife - 3);
+									console.log("computerLife " + computerLife)
+									console.log("userLife " + userLife)
+								}
+
+								if (computerLife < 1)
+								{	var html = "<div id = 'winnerScreen'></div>"
+
+								}
+
+								if (userLife < 1)
+								{	var html = "<div id = 'loserScreen'></div>"
+
+								}
+
+							}						
+						}
+						if (userMove == "o")
+						{	var userBigHitStrength = userStrength[Math.floor(Math.random() * userStrength.length)];
+							var userBigHitSpeed = userStrength[Math.floor(Math.random() * userStrength.length)];
+							var userBigHitIntelligence = userIntelligence[Math.floor(Math.random() * userIntelligence.length)];
+							var userBigHit = (userBigHitStrength * userBigHitSpeed * (userBigHitIntelligence/2));
+							var userPunch = ((userBigHit / 3) * 2);
+							// console.log(userPunch)
+
+							var computerDefenceDefence = computerDefence[Math.floor(Math.random() * computerDefence.length)];
+							var computerDefenceSpeed = computerSpeed[Math.floor(Math.random() * computerSpeed.length)];
+							var computerBlock = (computerDefenceDefence * computerDefenceSpeed);
+							console.log(computerBlock)
+							var moveOutcome = (userPunch - computerBlock);
+							console.log("moveOutcome "  + moveOutcome)
+							{	if (moveOutcome > 400)
+								{	computerLife = (computerLife - 15);
+									console.log("computerLife " + computerLife)
+									console.log("userLife " + userLife)
+								}
+
+								if((moveOutcome < 401) && (moveOutcome > 300))
+								{	computerLife = (computerLife - 12); userLife = (userLife - 1);
+									console.log("computerLife " + computerLife)
+									console.log("userLife " + userLife)
+								}
+
+								if((moveOutcome < 301) && (moveOutcome > 200))
+								{	computerLife = (computerLife - 7); userLife = (userLife - 1);
+									console.log("computerLife " + computerLife)
+									console.log("userLife " + userLife)
+								}
+
+								if((moveOutcome < 201) && (moveOutcome > 100))
+								{	computerLife = (computerLife - 3); userLife = (userLife - 1);
+									console.log("computerLife " + computerLife)
+									console.log("userLife " + userLife)
+								}
+
+								if((moveOutcome < 101) && (moveOutcome > 0))
+								{	computerLife = (computerLife - 1); userLife = (userLife - 1);
+									console.log("computerLife " + computerLife)
+									console.log("userLife " + userLife)
+								}
+
+								if(moveOutcome < 1) 
+								{	userLife = (userLife - 1);
+									console.log("computerLife " + computerLife)
+									console.log("userLife " + userLife)
+								}
+
+								if (computerLife < 1)
+								{	var html = "<div id = 'winnerScreen'></div>"
+
+								}
+
+								if (userLife < 1)
+								{	var html = "<div id = 'loserScreen'></div>"
+
+								}
+
+							}
+
+						}
+						if (userMove == "p")
+						{	var userBigHitStrength = userStrength[Math.floor(Math.random() * userStrength.length)];
+							var userBigHitSpeed = userStrength[Math.floor(Math.random() * userStrength.length)];
+							var userBigHitIntelligence = userIntelligence[Math.floor(Math.random() * userIntelligence.length)];
+							var userBigHit = (userBigHitStrength * userBigHitSpeed * (userBigHitIntelligence/2));
+							var userKick = (userBigHit / 3);
+							console.log(userKick)
+
+							var computerDefenceDefence = computerDefence[Math.floor(Math.random() * computerDefence.length)];
+							var computerDefenceSpeed = computerSpeed[Math.floor(Math.random() * computerSpeed.length)];
+							var computerBlock = (computerDefenceDefence * computerDefenceSpeed);
+							console.log(computerBlock)
+							var moveOutcome = (userKick - computerBlock);
+							console.log("moveOutcome "  + moveOutcome)
+							{	if (moveOutcome > 400)
+								{	computerLife = (computerLife - 10);
+									console.log("computerLife " + computerLife)
+									console.log("userLife " + userLife)
+								}
+
+								if((moveOutcome < 401) && (moveOutcome > 300))
+								{	computerLife = (computerLife - 8);
+									console.log("computerLife " + computerLife)
+									console.log("userLife " + userLife)
+								}
+
+								if((moveOutcome < 301) && (moveOutcome > 200))
+								{	computerLife = (computerLife - 6);
+									console.log("computerLife " + computerLife)
+									console.log("userLife " + userLife)
+								}
+
+								if((moveOutcome < 201) && (moveOutcome > 100))
+								{	computerLife = (computerLife - 2); 
+									console.log("computerLife " + computerLife)
+									console.log("userLife " + userLife)
+								}
+
+								if((moveOutcome < 101) && (moveOutcome > 0))
+								{	computerLife = (computerLife --); 
+									console.log("computerLife " + computerLife)
+									console.log("userLife " + userLife)
+								}
+
+								if(moveOutcome < 1) 
+								{	userLife = (userLife++ );
+									console.log("computerLife " + computerLife)
+									console.log("userLife " + userLife)
+								}
+
+								if (computerLife < 1)
+								{	var html = "<div id = 'winnerScreen'></div>"
+
+								}
+
+								if (userLife < 1)
+								{	var html = "<div id = 'loserScreen'></div>"
+
+								}
+
+							}					
+						}
+					}
+					
+					// COMPUTER'S GO
+
+					var computerChoices = ["i", "o", "p"]
+					var computerMove = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+					console.log("computerMove" + computerMove)
+
+						if (computerMove == "i")	
+						{	var computerBigHitStrength = computerStrength[Math.floor(Math.random() * computerStrength.length)];
+							var computerBigHitSpeed = computerStrength[Math.floor(Math.random() * computerStrength.length)];
+							var computerBigHitIntelligence = computerIntelligence[Math.floor(Math.random() * computerIntelligence.length)];
+							var computerBigHit = (computerBigHitStrength * computerBigHitSpeed * (computerBigHitIntelligence/2));
+							console.log(computerBigHit) 
+
+							var userDefenceDefence = userDefence[Math.floor(Math.random() * userDefence.length)];
+							var userDefenceSpeed = userSpeed[Math.floor(Math.random() * userSpeed.length)];
+							var userBlock = (userDefenceDefence * userDefenceSpeed);
+							console.log(userBlock)
+
+							var moveOutcome = (computerBigHit - userBlock);
+							console.log("moveOutcome "  + moveOutcome)
+							{	if (moveOutcome > 400)
+								{	userLife = (userLife - 20);
+									console.log("computerLife " + computerLife)
+									console.log("userLife " + userLife)
+								}
+
+								if((moveOutcome < 401) && (moveOutcome > 300))
+								{	userLife = (userLife - 15); computerLife = (computerLife - 3);
+									console.log("computerLife " + computerLife)
+									console.log("userLife " + userLife)
+								}
+
+								if((moveOutcome < 301) && (moveOutcome > 200))
+								{	userLife = (userLife - 10); computerLife = (computerLife - 3);
+									console.log("computerLife " + computerLife)
+									console.log("userLife " + userLife)
+								}
+
+								if((moveOutcome < 201) && (moveOutcome > 100))
+								{	userLife = (userLife - 5); computerLife = (computerLife - 3);
+									console.log("computerLife " + computerLife)
+									console.log("userLife " + userLife)
+								}
+
+								if((moveOutcome < 101) && (moveOutcome > 0))
+								{	userLife = (userLife - 3); computerLife = (computerLife - 3);
+									console.log("computerLife " + computerLife)
+									console.log("userLife " + userLife)
+								}
+
+								if(moveOutcome < 1) 
+								{	computerLife = (computerLife - 3);
+									console.log("computerLife " + computerLife)
+									console.log("userLife " + userLife)
+								}
+
+								if (computerLife < 1)
+								{	var html = "<div id = 'winnerScreen'></div>"
+
+								}
+
+								if (userLife < 1)
+								{	var html = "<div id = 'loserScreen'></div>"
+
+								}
+
+							}											
+						}
+						if (computerMove == "o")
+						{	var computerBigHitStrength = computerStrength[Math.floor(Math.random() * computerStrength.length)];
+							var computerBigHitSpeed = computerStrength[Math.floor(Math.random() * computerStrength.length)];
+							var computerBigHitIntelligence = computerIntelligence[Math.floor(Math.random() * computerIntelligence.length)];
+							var computerBigHit = (computerBigHitStrength * computerBigHitSpeed * (computerBigHitIntelligence/2));
+							var computerPunch = ((userBigHit / 3) * 2);
+							console.log(computerPunch)
+
+							var userDefenceDefence = userDefence[Math.floor(Math.random() * userDefence.length)];
+							var userDefenceSpeed = userSpeed[Math.floor(Math.random() * userSpeed.length)];
+							var userBlock = (userDefenceDefence * userDefenceSpeed);
+							console.log(userBlock)
+
+							var moveOutcome = (computerPunch - userBlock);
+							console.log("moveOutcome "  + moveOutcome)
+							{	if (moveOutcome > 400)
+								{	userLife = (userLife - 15);
+									console.log("computerLife " + computerLife)
+									console.log("userLife " + userLife)
+								}
+
+								if((moveOutcome < 401) && (moveOutcome > 300))
+								{	userLife = (userLife - 12); computerLife = (computerLife - 1);
+									console.log("computerLife " + computerLife)
+									console.log("userLife " + userLife)
+								}
+
+								if((moveOutcome < 301) && (moveOutcome > 200))
+								{	userLife = (userLife - 7); computerLife = (computerLife - 1);
+									console.log("computerLife " + computerLife)
+									console.log("userLife " + userLife)
+								}
+
+								if((moveOutcome < 201) && (moveOutcome > 100))
+								{	userLife = (userLife - 3); computerLife = (computerLife - 1);
+									console.log("computerLife " + computerLife)
+									console.log("userLife " + userLife)
+								}
+
+								if((moveOutcome < 101) && (moveOutcome > 0))
+								{	userLife = (userLife - 1); computerLife = (computerLife - 1);
+									console.log("computerLife " + computerLife)
+									console.log("userLife " + userLife)
+								}
+
+								if(moveOutcome < 1) 
+								{	computerLife = (computerLife - 1);
+									console.log("computerLife " + computerLife)
+									console.log("userLife " + userLife)
+								}
+
+								if (computerLife < 1)
+								{	var html = "<div id = 'winnerScreen'></div>"
+
+								}
+
+								if (userLife < 1)
+								{	var html = "<div id = 'loserScreen'></div>"
+
+								}
+
+							}			
+						}
+						if (computerMove == "p")
+						{	var computerBigHitStrength = computerStrength[Math.floor(Math.random() * computerStrength.length)];
+							var computerBigHitSpeed = computerStrength[Math.floor(Math.random() * computerStrength.length)];
+							var computerBigHitIntelligence = computerIntelligence[Math.floor(Math.random() * computerIntelligence.length)];
+							var computerBigHit = (computerBigHitStrength * computerBigHitSpeed * (computerBigHitIntelligence/2));
+							var computerKick = (computerBigHit / 3);
+							console.log(computerKick)
+
+							var userDefenceDefence = userDefence[Math.floor(Math.random() * userDefence.length)];
+							var userDefenceSpeed = userSpeed[Math.floor(Math.random() * userSpeed.length)];
+							var userBlock = (userDefenceDefence * userDefenceSpeed);
+							console.log(userBlock)
+
+							var moveOutcome = (computerKick - userBlock);
+							console.log("moveOutcome "  + moveOutcome)
+							{	if (moveOutcome > 400)
+								{	userLife = (userLife - 10);
+									console.log("computerLife " + computerLife)
+									console.log("userLife " + userLife)
+								}
+
+								if((moveOutcome < 401) && (moveOutcome > 300))
+								{	userLife = (userLife - 8); 
+									console.log("computerLife " + computerLife)
+									console.log("userLife " + userLife)
+								}
+
+								if((moveOutcome < 301) && (moveOutcome > 200))
+								{	userLife = (userLife - 6); 
+									console.log("computerLife " + computerLife)
+									console.log("userLife " + userLife)
+								}
+
+								if((moveOutcome < 201) && (moveOutcome > 100))
+								{	userLife = (userLife - 2); 
+									console.log("computerLife " + computerLife)
+									console.log("userLife " + userLife)
+								}
+
+								if((moveOutcome < 101) && (moveOutcome > 0))
+								{	userLife = (userLife - 1); 
+									console.log("computerLife " + computerLife)
+									console.log("userLife " + userLife)
+								}
+
+								if(moveOutcome < 1) 
+								{	computerLife = (computerLife++);
+									console.log("computerLife " + computerLife)
+									console.log("userLife " + userLife)
+								}
+
+								if (computerLife < 1)
+								{	var html = "<div id = 'winnerScreen'></div>"
+
+								}
+
+								if (userLife < 1)
+								{	var html = "<div id = 'loserScreen'></div>"
+
+								}
+
+							}			
+
+						}
+				}
+			}
+			
+		
+</script>
+</body>
+</html>
+
+		
